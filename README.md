@@ -16,7 +16,7 @@
 ## 三、目标网站分析
 
 如图，这是CNode首页一部分div标签，我们就是通过这一系列的id、class来定位我们需要的信息。
-![](http://files.jb51.net/file_images/article/201412/201412221036044.png)
+![](http://static.xiaomo.info/images/0.png)
 
 ## 四、使用superagent获取源数据
 
@@ -38,7 +38,7 @@ superagent就是ajax API来使用的Http库，它的使用方法与jQuery差不�
 
 它的res结果为一个包含目标url信息的对象，网站内容主要在其text(string)里。
 
-![](http://files.jb51.net/file_images/article/201412/201412221036045.png)
+![](http://static.xiaomo.info/images/1.png)
 
 # 五、使用cheerio解析
 
@@ -54,7 +54,7 @@ cheerio充当服务器端的jQuery功能，我们先使用它的.load()来载入
 
 其结果为一个个对象，调用 `.each(function(index, element))`函数来遍历每一个对象，返回的是HTML DOM Elements。
 
-![](http://files.jb51.net/file_images/article/201412/201412221036046.png)
+![](http://static.xiaomo.info/images/2.png)
 
 输出 console.log($element.attr('title'));的结果为
  广州 2014年12月06日 NodeParty 之 UC 场之类的标题，输出 console.log($element.attr('href'));
@@ -118,16 +118,16 @@ superagent.get(tUrl)
 
 结果如下  
 
-![](http://files.jb51.net/file_images/article/201412/201412221036057.png)
+![](http://static.xiaomo.info/images/3.png)
 
 
 获取留言用户名和积分  
 
-![](http://files.jb51.net/file_images/article/201412/201412221036058.png)
+![](http://static.xiaomo.info/images/4.png)
 
 在文章页面的源码找到评论的用户class名，classname为reply_author。console.log第一个元素 $('.reply_author').get(0)可以看到，我们需要获取东西都在这里头。
 
-![](http://files.jb51.net/file_images/article/201412/201412221036059.png)
+![](http://static.xiaomo.info/images/5.png)
 
 首先，我们先对一篇文章进行抓取，一次性把需要的都得到即可。
 
